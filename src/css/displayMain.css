@@ -1,0 +1,334 @@
+@charset "UTF-8";
+/* CSS Document */
+@import url(reset.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* /////////////////////////////// */
+/*               BODY              */
+/* /////////////////////////////// */
+body,html{ background-color: black; height: 100%; font-family: 'Varela Round', sans-serif; }
+*{ box-sizing: border-box; text-decoration: none; outline: none; }
+#root{ height: 100%; }
+
+/* /////////////////////////////// */
+/*          TYPOS & COULEURS       */
+/* /////////////////////////////// */
+/*
+font-family: 'Varela Round', sans-serif;
+vert : 64a19d
+vert foncé : 4b7a77
+*/
+
+/* /////////////////////////////// */
+/*              LOADER             */
+/* /////////////////////////////// */
+.loader{ position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: black; z-index: 999; }
+.conteneurLoader{ position: absolute; width: 40px; height: 40px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.carreRebond{ position: absolute; width: 40px; height: 40px; background-color: #64a19d; border-radius: 5px; }
+
+/* /////////////////////////////// */
+/*              HEADER             */
+/* /////////////////////////////// */
+header{ position: fixed; top: 0; left: 0; width: 100%; height: 70px; background-color: white; z-index: 99; border-bottom: 2px solid #64a19d; }
+.logoHeader{ display: inline-block; height: 70px; line-height: 70px; font-size: 18px; color: black; padding: 0 0 0 20px; letter-spacing: 1px; 
+	cursor: pointer; transition: 0.35s color ease-in-out; }
+.logoHeader span{ color: #64a19d; }
+.btnMenuMobile{ position: absolute; top: 0; right: 0; width: 70px; height: 70px; font-size: 18px; text-align: center; 
+	line-height: 70px; color: #64a19d; }
+nav{ display: none; position: absolute; top: 70px; left: 0; width: 100%; background-color: white; }
+nav a{ display: block; position: relative; padding: 20px; font-size: 16px; color: rgba(0,0,0,0.5); letter-spacing: 1px; }
+nav a.active{ color: #64a19d; }
+nav a.active::before{ content: ''; display: block; position: absolute; top: 0; left: 0; width: 2px; height: 100%; background-color: #64a19d; }
+
+/* /////////////////////////////// */
+/*              SECTION            */
+/* /////////////////////////////// */
+section{ display: -ms-flexbox; display: -webkit-flex; display: flex;
+    -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row;
+    -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;
+    -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center;
+    -webkit-align-content: center; -ms-flex-line-pack: center; align-content: center;
+    -webkit-align-items: center; -ms-flex-align: center; align-items: center;
+	min-height: 100%; position: relative; overflow: hidden; }
+article{ position: relative; padding: 10px; width: 100%; max-width: 1366px; text-align: center; }
+h1{ font-size: 40px; text-transform: uppercase; letter-spacing: 5px; color: rgba(255,255,255,0.5); margin: 0 0 20px 0; }
+h2, h3{ font-size: 24px; letter-spacing: 3px; line-height: 1.4em; color: white; margin: 0 0 20px 0; }
+h3{ font-size: 20px; }
+p{ color: rgba(255,255,255,0.5); font-size: 16px; line-height: 1.4em; padding: 0 10px; }
+p.marginPlus{ margin: 0 0 20px 0; }
+
+/* /////////////////////////////// */
+/*               HOME              */
+/* /////////////////////////////// */
+#home > .fond{ position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+75,000000+100&0.3+0,0.7+75,1+100 */
+	/* FF3.6-15 */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,1) 100%), url('http://www.graphoeilmultimedia.com/reactDev/grayscale/imagesWWW/bg-masthead.jpg');
+	/* Chrome10-25,Safari5.1-6 */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.7) 75%,rgba(0,0,0,1) 100%), url('http://www.graphoeilmultimedia.com/reactDev/grayscale/imagesWWW/bg-masthead.jpg');
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.7) 75%,rgba(0,0,0,1) 100%), url('http://www.graphoeilmultimedia.com/reactDev/grayscale/imagesWWW/bg-masthead.jpg');
+	/* ... */
+	background-position: center center;
+	background-size: cover;
+}
+#btnCommencer, #btnTelecharger{ display: inline-block; padding: 20px 20px; margin: 40px 0 0 0; background-color: #64a19d; color: white; text-transform: uppercase;
+	font-size: 12px; letter-spacing: 3px; border-radius: 5px;  }
+/* Animation home */
+h1.animate, p.animate, #btnCommencer{ opacity: 0; }
+
+/* /////////////////////////////// */
+/*             A PROPOS            */
+/* /////////////////////////////// */
+#aPropos{ -webkit-align-content: flex-end; -ms-flex-line-pack: end; align-content: flex-end;
+    -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; min-height: 50%; }
+#aPropos > .imageFond{ width: 100%; max-width: 1366px; height: 300px; margin: 20px 0 0 0; }
+#aPropos > .imageFond img{ display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* /////////////////////////////// */
+/*             PROJETS             */
+/* /////////////////////////////// */
+#projets{ background-color: white; }
+figure{ position: relative; margin: 30px auto; width: 100%; max-width: 1366px; }
+.imgProjet{ width: 100%; height: auto; padding: 0 20px; margin: 0 0 40px 0; }
+.imgProjet img{ display: block; width: 100%; height: 100%; object-fit: cover; }
+figcaption{ position: relative; text-align: center; padding: 10px; width: calc(100% - 40px); margin: 0 auto; }
+figcaption h3{ color: #64a19d; }
+figcaption p{ color: rgba(0,0,0,0.5); }
+/* Texte dans la photo */
+figure.inner .imgProjet{ margin: 0; }
+figure.inner figcaption{ background-color: black; padding: 40px 40px 50px 40px; }
+figure.inner figcaption h3{ color: white; }
+figure.inner figcaption p{ color: rgba(255,255,255,0.5); }
+
+/* /////////////////////////////// */
+/*             CONTACT             */
+/* /////////////////////////////// */
+#contact > .fond{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; 
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+75,000000+100&0.3+0,0.7+75,1+100 */
+	/* FF3.6-15 */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,1) 100%), url('http://www.graphoeilmultimedia.com/reactDev/grayscale/imagesWWW/bg-signup.jpg');
+	/* Chrome10-25,Safari5.1-6 */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.5) 75%,rgba(0,0,0,1) 100%), url('http://www.graphoeilmultimedia.com/reactDev/grayscale/imagesWWW/bg-signup.jpg');
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.5) 75%,rgba(0,0,0,1) 100%), url('http://www.graphoeilmultimedia.com/reactDev/grayscale/imagesWWW/bg-signup.jpg');
+	/* ... */
+	background-position: center center; background-repeat: no-repeat; background-size: cover; }
+#contact article > i{ color: white; font-size: 30px; padding: 10px; margin: 20px 0 10px 0; }
+.formContainer{ width: 100%; height: 200px; padding: 20px; margin: 10px 0 0 0; }
+.check{ display: inline-block; margin: 0 10px 0 0; height: 40px; width: 20px; line-height: 40px; }
+.check i{ font-size: 18px; color: white; }
+input[type="text"]{ display: inline-block; width: 200px; height: 40px; padding: 5px 10px; border: none;
+	font-family: 'Varela Round', sans-serif; color: rgba(0,0,0,0.7); border-radius: 5px; }
+.submitContainer{ width: 100%; margin: 30px 0 0 0; }
+input[type="submit"]{ display: inline-block; padding: 20px 20px; background-color: #64a19d; color: white; text-transform: uppercase;
+	font-size: 12px; letter-spacing: 3px; border-radius: 5px; border: none; }
+input[type="submit"]:disabled{ background-color: rgba(0,0,0,0.5); }
+/* Placeholder */
+::-webkit-input-placeholder{ color: rgba(0,0,0,0.5); }
+::-moz-placeholder{ color: rgba(0,0,0,0.5); }
+:-ms-input-placeholder{ color: rgba(0,0,0,0.5); }
+:-moz-placeholder{ color: rgba(0,0,0,0.5); }
+/* Merci */
+.formMerci{ font-size: 18px; color: white; opacity: 0; transition: 0.35s opacity ease-in-out; }
+.formMerci.visible{ opacity: 1; }
+.formMerci i{ position: relative; color: #64a19d; margin: 0 0 0 10px; font-size: 30px; vertical-align: middle; z-index: 1; }
+.formMerci i::after{ content: ''; display: block; position: absolute; width: 15px; height: 15px; background-color: white; 
+	top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: -1; }
+/* Coordonnees */
+.blocCoordonnees{ position: relative; width: 80%; padding: 30px; margin: 0 auto 30px auto; background-color: rgba(255,255,255,0.8);
+	border-radius: 5px; overflow: hidden; border-bottom: 5px solid #64a19d; }
+.blocCoordonnees i{ font-size: 20px; color: #64a19d; margin: 0 0 20px 0; }
+.titreCoordonnees{ font-size: 13px; text-transform: uppercase; color: black; margin: 0 0 30px 0; letter-spacing: 2px; }
+.blocCoordonnees span{ display: inline-block; width: 50px; margin: 0 0 30px 0; border-bottom: 1px solid rgba(0,0,0,0.3); text-align: center; }
+.texteCoordonnees{ font-size: 14px; color: rgba(0,0,0,0.5); line-height: 1.4em; }
+.texteCoordonnees a{ color: #64a19d; text-decoration: underline; }
+
+/* /////////////////////////////// */
+/*              FOOTER             */
+/* /////////////////////////////// */
+footer{ width: 100%; background-color: black; padding: 50px 20px; }
+.socialFooter{ margin: 0 0 80px 0; text-align: center; }
+.socialFooter a{ display: inline-block; width: 50px; height: 50px; margin: 0 20px 0 0; background-color: #64a19d; 
+	border-radius: 50%; color: white; line-height: 50px; }
+.socialFooter a:last-child{ margin: 0; }
+.copyright{ font-size: 14px; text-align: center; color: white; margin: 0 0 40px 0; text-transform: uppercase; }
+.copyright b{ color: #64a19d; }
+
+/* /////////////////////////////// */
+/*     >= 375px | iPhone 6,7,8     */
+/* /////////////////////////////// */
+@media only screen and (min-width: 375px){
+	/* Section */
+	h1{ font-size: 44px; }
+	/* Contact */
+	input[type="text"]{ width: 270px; }
+	/* Footer */
+	.socialFooter a{ margin: 0 30px 0 0; }
+}
+
+/* /////////////////////////////// */
+/*     >= 768px | iPad portrait    */
+/* /////////////////////////////// */
+@media only screen and (min-width: 768px){
+	/* Header */
+	header{ background-color: transparent; border-bottom: none; transition: 0.35s background-color ease-in-out; }
+	.logoHeader{ color: rgba(255,255,255,0.5); font-size: 20px; }
+	.btnMenuMobile{ display: none; }
+	nav{ display: inline-block; top: 0; left: auto; right: 0; width: auto; height: 70px; line-height: 70px; background-color: transparent; }
+	nav a{ display: inline-block; padding: 0 20px; margin: 0 20px 0 0; color: rgba(255,255,255,0.5); }
+	nav a:last-child{ margin: 0; }
+	nav a.active::before{ top: 50%; width: 2px; height: 50%; transform: translateY(-50%); }
+	/* Header fixe */
+	header.fixed{ background-color: rgba(255,255,255,0.9); }
+	header.fixed .logoHeader{ color: black; }
+	header.fixed nav a{ color: black; }
+	header.fixed nav a.active{ color: #64a19d; }
+	/* Section */
+	article.paddingPlus{ padding: 10px 30px; }
+	h1{ font-size: 64px; }
+	h2{ font-size: 30px; }
+	h3{ font-size: 26px; }
+	p{ font-size: 17px; line-height: 1.6em; }
+	/* A propos */
+	#aPropos{ min-height: 70%; }
+	/* Contact */
+	.coordonnees{ display: -ms-flexbox; display: -webkit-flex; display: flex;
+		-webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row;
+		-webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;
+		-webkit-justify-content: center; -ms-flex-pack: center; justify-content: center;
+		-webkit-align-content: stretch; -ms-flex-line-pack: stretch; align-content: stretch;
+		-webkit-align-items: stretch; -ms-flex-align: stretch; align-items: stretch;
+	}
+	.blocCoordonnees{ width: calc(50% - 30px); margin: 0 15px 30px 15px; }
+	/* Footer */
+	.socialFooter a{ margin: 0 50px 0 0; }
+}
+
+/* /////////////////////////////// */
+/*   >= 812px | iphoneX paysage    */
+/* /////////////////////////////// */
+@media only screen and (min-width: 812px) and (orientation: landscape){
+	/* Section */
+	h1{ font-size: 44px; margin: 0 0 10px 0; }
+	h2{ font-size: 24px; }
+	h3{ font-size: 20px; }
+	#btnCommencer, #btnTelecharger{ margin: 20px 0 0 0; }
+}
+
+/* /////////////////////////////// */
+/*     >= 1024px | iPad paysage    */
+/* /////////////////////////////// */
+@media only screen and (min-width: 1024px) and (orientation: landscape){
+	/* Section */
+	article.paddingPlus{ padding: 10px 15%; }
+	h1{ font-size: 64px; margin: 0 0 20px 0; }
+	h2{ font-size: 30px; }
+	h3{ font-size: 26px; }
+	#btnCommencer, #btnTelecharger{ margin: 40px 0 0 0; }
+	/* A propos */
+	#aPropos > .imageFond{ margin: 40px 0 0 0; }
+	/* Projets */
+	figure{ display: -ms-flexbox; display: -webkit-flex; display: flex;
+		-webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row;
+		-webkit-flex-wrap: nowrap; -ms-flex-wrap: nowrap; flex-wrap: nowrap;
+		-webkit-justify-content: center; -ms-flex-pack: center; justify-content: center;
+		-webkit-align-content: stretch; -ms-flex-line-pack: stretch; align-content: stretch;
+		-webkit-align-items: center; -ms-flex-align: center; align-items: center; 
+		margin: 30px 30px 0 30px; }
+	figure:last-of-type{ margin: 0 30px 30px 30px; }
+	figure:last-of-type .imgProjet{ -webkit-order: 1; -ms-flex-order: 1; order: 1; }
+	figure:last-of-type figcaption{ -webkit-order: 0; -ms-flex-order: 0; order: 0; }
+	figure.inner{ background-color: black; }
+	.imgProjet{ width: 50%; margin: 0; padding: 0; }
+	figcaption{ width: 50%; height: 100%; margin: 0; padding: 0; }
+	figure.first figcaption{ padding: 0 0 0 20px; }
+	figure.first figcaption::before{ content: ''; display: block; position: absolute; width: 5px; height: 100%; left: -1px; top: 0; 
+		background-color: #64a19d; }
+	/* Contact */
+	.blocCoordonnees{ width: calc(33.33% - 30px); margin: 0 15px 30px 15px; }
+}
+
+/* /////////////////////////////// */
+/*   >= 1024px | iPadPro portrait  */
+/* /////////////////////////////// */
+@media only screen and (min-width: 1024px) and (orientation: portrait){
+	/* Section */
+	article.paddingPlus{ padding: 10px 15%; }
+	h1{ font-size: 84px; }
+	h2{ font-size: 36px; }
+	h3{ font-size: 30px; }
+	#btnCommencer, #btnTelecharger{ font-size: 13px; }
+	/* A propos */
+	#aPropos > .imageFond{ margin: 40px 0 0 0; }
+	/* Projets */
+	figure{ display: -ms-flexbox; display: -webkit-flex; display: flex;
+		-webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row;
+		-webkit-flex-wrap: nowrap; -ms-flex-wrap: nowrap; flex-wrap: nowrap;
+		-webkit-justify-content: center; -ms-flex-pack: center; justify-content: center;
+		-webkit-align-content: stretch; -ms-flex-line-pack: stretch; align-content: stretch;
+		-webkit-align-items: center; -ms-flex-align: center; align-items: center; 
+		margin: 30px 30px 0 30px; }
+	figure.first{ margin: 30px; }
+	figure:last-of-type{ margin: 0 30px 30px 30px; }
+	figure:last-of-type .imgProjet{ -webkit-order: 1; -ms-flex-order: 1; order: 1; }
+	figure:last-of-type figcaption{ -webkit-order: 0; -ms-flex-order: 0; order: 0; }
+	figure.inner{ background-color: black; }
+	.imgProjet{ width: 50%; margin: 0; padding: 0; }
+	figcaption{ width: 50%; height: 100%; margin: 0; padding: 0; }
+	figure.first figcaption{ padding: 0 0 0 20px; }
+	figure.first figcaption::before{ content: ''; display: block; position: absolute; width: 7px; height: 100%; left: -1px; top: 0; 
+		background-color: #64a19d; }
+	/* Contact */
+	.blocCoordonnees{ width: calc(33.33% - 30px); margin: 0 15px 30px 15px; }
+	/* Footer */
+	footer{ padding: 0 20px 50px 20px; }
+}
+
+/* /////////////////////////////// */
+/*  >= 1366px | iPadPro & Laptop   */
+/* /////////////////////////////// */
+@media only screen and (min-width: 1366px){
+	/* Header */
+	.logoHeader{ font-size: 22px; padding: 0 0 0 30px; }
+	nav{ right: 10px; }
+	nav a{ font-size: 18px; }
+	html.no-touchevents nav a:hover{ color: rgba(255,255,255,1); }
+	html.no-touchevents nav a.active:hover{ color: #64a19d; }
+	html.no-touchevents header.fixed nav a:hover{ color: #64a19d; }
+	/* Section */
+	h1{ font-size: 104px; }
+	h2{ font-size: 46px; }
+	h3{ font-size: 36px; }
+	#btnCommencer, #btnTelecharger{ font-size: 14px; }
+	html.no-touchevents #btnCommencer, html.no-touchevents #btnTelecharger{ transition: 0.35s padding ease-in-out, 0.35s background-color ease-in-out; }
+	html.no-touchevents #btnCommencer:hover, html.no-touchevents #btnTelecharger:hover{ padding: 20px 30px; background-color: #4b7a77; }
+	/* A propos */
+	#aPropos{ min-height: 80%; }
+	#aPropos > .imageFond{ margin: 100px 0 0 0; }
+	/* Projets */
+	figure.first{ margin: 30px; }
+	figure figcaption, figure.inner figcaption{ padding: 70px; }
+	/* Contact */
+	.blocCoordonnees{ width: calc(33.33% - 60px); margin: 0 30px 30px 30px; }
+	html.no-touchevents input[type="submit"]{ transition: 0.35s padding ease-in-out, 0.35s background-color ease-in-out; }
+	html.no-touchevents input[type="submit"]:enabled:hover{ padding: 20px 30px; background-color: #4b7a77; }
+	/* Footer */
+	html.no-touchevents .socialFooter a{ transition: 0.35s background-color ease-in-out; }
+	html.no-touchevents .socialFooter a:hover{ background-color: #4b7a77; }
+}
+
+/* /////////////////////////////// */
+/*       >= 1690px | iMac          */
+/* /////////////////////////////// */
+@media only screen and (min-width: 1690px){}
+
+/* /////////////////////////////// */
+/*    >= 2560px | iMac fullscreen  */
+/* /////////////////////////////// */
+@media only screen and (min-width: 2560px){}
+
+/* /////////////////////////////// */
+/*            Impression           */
+/* /////////////////////////////// */
+@media only print{}
